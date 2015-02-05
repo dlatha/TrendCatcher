@@ -8,10 +8,10 @@ class TagsController < ApplicationController
   # GET /tags.json
   def index
     @client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = "fkFZUCjJ77QxOr1JVpti5OHwu"
-      config.consumer_secret     = "IW6WzQU8iWwAHNgVq0pNJY56zIvWSpgjYpoJQhdcPsHbqeCjqr"
-      config.access_token        = "28348819-U1lte4m7QsQuqTfVxASAgXnAUi5g9dwopfryFdGS0"
-      config.access_token_secret = "39ArvRB0GGUhltqHc5cZINXsVDehJJKEDw3MTEmsKNscy"
+      config.consumer_key        = "xx"
+      config.consumer_secret     = "xx"
+      config.access_token        = "28348819-xx"
+      config.access_token_secret = "xx"
 
     end
     def @client.get_all_tweets(user)
