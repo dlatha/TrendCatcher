@@ -15,10 +15,10 @@ class TagsController < ApplicationController
 
     end
     def @client.get_all_tweets(user)
-      options = {:count => 3, :include_rts => true}
+      options = {:count => 10, :include_rts => true}
       user_timeline(user, options)
     end
-    @tweet_news =@client.get_all_tweets("tezzataz")
+    @tweet_news =@client.get_all_tweets("reelgeni_us")
     @tags = Tag.all
     @tmp = "tmp";
   end
