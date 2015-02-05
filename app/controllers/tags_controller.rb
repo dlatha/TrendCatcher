@@ -1,12 +1,27 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
+
+
+
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.all
-  end
+    @client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = "fkFZUCjJ77QxOr1JVpti5OHwu"
+      config.consumer_secret     = "IW6WzQU8iWwAHNgVq0pNJY56zIvWSpgjYpoJQhdcPsHbqeCjqr"
+      config.access_token        = "28348819-U1lte4m7QsQuqTfVxASAgXnAUi5g9dwopfryFdGS0"
+      config.access_token_secret = "39ArvRB0GGUhltqHc5cZINXsVDehJJKEDw3MTEmsKNscy"
 
+    end
+    def @client.get_all_tweets(user)
+      options = {:count => 3, :include_rts => true}
+      user_timeline(user, options)
+    end
+    @tweet_news =@client.get_all_tweets("tezzataz")
+    @tags = Tag.all
+    @tmp = "tmp";
+  end
   # GET /tags/1
   # GET /tags/1.json
   def show
